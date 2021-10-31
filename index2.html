@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    #plane {
+      position: relative;
+      cursor: pointer;
+      top: 500px; 
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+        <h3 id="logo">Destinations</h3>
+        <a href="index.html">
+          <img class="fan" src="./img/Hamburger_icon.svg" alt="fan">
+        </a> 
+    </nav>
+
+  <img id="plane" src="./img/DdOo-Paper-plane.svg">
+
+
+  <script>
+    plane.onclick = function() {
+      let start = Date.now(); // remember start time
+
+      let timer = setInterval(function() {
+        let timePassed = Date.now() - start; // how much time passed from the start?
+
+        plane.style.left = timePassed / 2 + 'px'; /* as timePassed goes from 0 to 2000
+                                                   left gets values from 0px to 1000px*/
+        plane.style.top = 500 + (-timePassed / 5) + 'px';/* as timePassed goes from 0 to 2000
+                                                         top gets values from 500px to 100px*/
+
+        if (timePassed > 2000) clearInterval(timer); // finish the animation after 2 seconds
+
+      }, 16);
+    }
+  </script>
+
+
+</body>
+
+</html>
+
+
+
